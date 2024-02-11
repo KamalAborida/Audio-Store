@@ -1,0 +1,29 @@
+.dropDownDiv {
+  &__dropDown {
+    padding: 1em 1.5em;
+    border-radius: calc($border-radius / 2);
+    border: 2px solid $dark-gray;
+    font-weight: $font-weight-bold;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $light-orange;
+      font-weight: $font-weight-bold;
+      caret-color: $light-orange;
+      &::placeholder {
+        font-size: 0;
+      }
+    }
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+    display: block;
+    margin-bottom: 7px;
+  }
+}

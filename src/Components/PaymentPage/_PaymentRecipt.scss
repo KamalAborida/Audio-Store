@@ -1,0 +1,26 @@
+.paymentRecipt {
+  // border: 2px solid green;
+  border-radius: $border-radius;
+  width: 35%;
+  height: min-content;
+  padding: 2em;
+  background-color: white;
+
+  &__title {
+    margin-bottom: 25px;
+    @include apply-font-styles("h6");
+    font-weight: $font-weight-bold;
+  }
+
+  &__summaryItems {
+    margin: 20px auto;
+  }
+
+  & > .moneyPaid {
+    margin: 15px auto;
+  }
+
+  & > .btn {
+    width: 100%;
+  }
+}

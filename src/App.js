@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./main.css";
+import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
+import RootPage from "./Pages/RootPage";
+import HomePage from "./Pages/HomePage";
+import ProductDetails from "./Pages/ProductDetails";
+import CategoryPage, { loader } from "./Pages/CategoryPage";
+import PaymentPage from "./Pages/PaymentPage";
+import ModalContext from "./Components/Context/modal-context";
+import { useState } from "react";
 
 function App() {
+  const [reRender, setReRender] = useState([])
+
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootPage />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+          loader: loader,
+        },
+        {
+          path: `:categoryName`,
+          element: <CategoryPage />,
+        },
+        {
+          path: ":categoryName/:productId",
+          element: <ProductDetails />,
+        },
+      ],
+    },
+    {
+      path: "/payment",
+      element: <PaymentPage />,
+    },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ModalContext.Provider
+      value={{ closeModalCart: () => {}, openModalCart: () => {}, reRender: () => {
+        setReRender(prev => {
+          console.log(prev);
+          return []
+        })
+        console.log("done");
+      } }}
+    >
+      <RouterProvider router={routes} />
+    </ModalContext.Provider>
   );
 }
 

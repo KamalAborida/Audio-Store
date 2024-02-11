@@ -1,0 +1,35 @@
+.productCollection {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  // border: 2px solid red;
+  margin: 100px auto 80px auto;
+  height: 250px;
+  align-items: center;
+}
+
+.productDiv3d {
+  // border: 2px solid red;
+  background-color: $dark-gray;
+  position: relative;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: $border-radius;
+  height: 80%;
+  // margin: 50%;
+
+  &__img {
+    position: absolute;
+    top: -60px;
+    width: 200px;
+    // border: 2px solid red;
+  }
+
+  &__title {
+    @include apply-font-styles("h6");
+    // border: 2px solid red;
+  }
+}

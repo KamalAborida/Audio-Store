@@ -1,0 +1,34 @@
+.radioInptDiv{
+  border: 2px solid $dark-gray;
+  // max-width: 200px;
+  font-weight: $font-weight-bold;
+  display: flex;
+  align-items: center;
+  padding: 1em 1.5em;
+  border-radius: calc($border-radius / 2);
+
+  &__label {
+    font-size: 12px;
+  }
+
+  &__inpt {
+    $radius: 16px;
+    margin-right: 20px;
+    width: $radius;
+    height: $radius;
+    accent-color: $dark-orange;
+  }
+
+  &-checked {
+    border: 2px solid $dark-orange;
+  }
+
+  &__inpt:hover, &__label:hover {
+    cursor: pointer;
+  }
+
+  &:hover {
+    border: 2px solid $light-orange;
+    cursor: pointer;
+  }
+}

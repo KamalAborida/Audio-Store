@@ -1,0 +1,55 @@
+$light-black: #101010;
+$dark-orange: #d87d4a;
+$light-orange: #fbaf85;
+$dark-gray: #f1f1f1;
+$light-gray: #fafafa;
+
+$main-font: "Manrope", sans-serif;
+
+$font-weight-bold: 700;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+$border-radius: 15px;
+
+$font-sizes: (
+  "h1": 56px,
+  "h2": 40px,
+  "h3": 32px,
+  "h4": 28px,
+  "h5": 24px,
+  "h6": 18px,
+  "body": 15px,
+  "overline": 14px,
+  "subTitle": 13px,
+);
+
+$line-spaces: (
+  "h1": 58px,
+  "h2": 44px,
+  "h3": 36px,
+  "h4": 38px,
+  "h5": 33px,
+  "h6": 24px,
+  "body": 25px,
+  "overline": 19px,
+  "subTitle": 25px,
+);
+
+$letter-spacing: (
+  "h1": 2px,
+  "h2": 1.5px,
+  "h3": 1.15px,
+  "h4": 2px,
+  "h5": 1.7px,
+  "h6": 1.3px,
+  "body": "unset",
+  "overline": 10px,
+  "subTitle": 1px,
+);
+
+@mixin apply-font-styles($type) {
+  font-size: map-get($font-sizes, $type);
+  line-height: map-get($line-spaces, $type);
+  letter-spacing: map-get($letter-spacing, $type);
+}

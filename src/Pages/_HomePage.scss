@@ -1,0 +1,86 @@
+.homePage {
+  &__header {
+    background-image: url("./Assets/home/desktop/image-hero.jpg");
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    // padding-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__container {
+      // border: 2px solid green;
+      width: 70%;
+
+      & > .productDiv {
+        // border: 2px solid red;
+        color: white;
+        width: 50%;
+
+        .productDiv__contentDiv {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  &__starProductsDiv {
+    // border: 2px solid red;
+    width: 70%;
+    margin: 40px auto 50px auto;
+
+    &__product:nth-child(odd) {
+      justify-content: flex-end;
+      border-radius: $border-radius;
+    }
+
+    &__product:nth-child(1) {
+      background-image: url("./Assets/home/desktop/image-speaker-zx9.png");
+      background-color: $dark-orange;
+      background-size: 30%;
+      background-repeat: no-repeat;
+      background-position: 140px 110%;
+      color: white;
+    }
+
+    &__product:nth-child(2) {
+      background-image: url("./Assets/home/desktop/image-speaker-zx7.jpg");
+      border-radius: $border-radius;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &__product:nth-child(3) {
+      background-image: url("./Assets/home/desktop/image-earphones-yx1.jpg");
+      background-repeat: no-repeat;
+      background-color: $dark-gray;
+    }
+
+    &__product {
+      display: flex;
+      // border: 2px solid green;
+      margin-bottom: 25px;
+      padding: 3em 4em;
+
+      .productDiv {
+        // border: 1px solid black;
+        max-width: 40%;
+        padding: 1.5em;
+
+        &__contentDiv {
+          width: 100%;
+
+          &__btnsDiv {
+            width: 100%;
+          }
+
+          &__title {
+            @include apply-font-styles("h3")
+          }
+        }
+      }
+    }
+  }
+}

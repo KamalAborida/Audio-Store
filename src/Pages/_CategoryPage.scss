@@ -1,0 +1,36 @@
+.categoryPage {
+  &__header {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+
+    &__container {
+      // border: 2px solid green;
+      width: 70%;
+      margin-top: 10vh;
+
+      &__title {
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+
+  &__productsList {
+    // border: 2px solid red;
+    margin: 50px auto;
+    width: 70%;
+
+    .productDiv {
+      // border: 1px solid green;
+      margin-bottom: 50px;
+      padding: 1em;
+
+      &__img {
+        border-radius: 10px;
+      }
+    }
+  }
+}

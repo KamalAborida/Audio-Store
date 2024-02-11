@@ -1,0 +1,51 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $dark-gray;
+  background-color: transparent;
+  height: 80px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 70%;
+
+  &__logo {
+    height: 40%;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__cart {
+    height: 25%;
+    &:hover {
+      cursor: pointer;
+      color: $dark-orange;
+    }
+  }
+
+  &__navElements {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    @include apply-font-styles("subTitle");
+
+    &__element {
+      color: white;
+      text-decoration: none;
+    }
+
+    &__element:hover {
+      cursor: pointer;
+      color: $dark-orange;
+    }
+
+    &__element:active,  &__element:focus{
+      color: $dark-orange;
+      text-decoration: none;
+      border: unset;
+    }
+  }
+}

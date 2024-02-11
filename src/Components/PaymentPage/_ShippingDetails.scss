@@ -1,0 +1,32 @@
+.shippingDetails {
+  margin-bottom: 50px;
+  .inputsDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20px;
+
+    .textInptDiv {
+      // border: 5px solid black;
+      width: 98%;
+    }
+
+    .textInptDiv:nth-child(1) {
+      grid-column: 1 / 3;
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+
+    .dropDownDiv:last-of-type {
+      // border: 2px solid black;
+      width: 100%;
+
+      .dropDownDiv__dropDown {
+        width: 100%;
+      }
+    }
+  }
+
+  // border: 2px solid red;
+}

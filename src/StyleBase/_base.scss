@@ -1,0 +1,66 @@
+html {
+  font-family: $main-font; // Assuming $main-font is defined elsewhere in your SCSS
+}
+
+body {
+  height: fit-content;
+  width: 100%;
+  // background-color: black;
+}
+
+h1 {
+  font-size: map-get($font-sizes, 'h1');
+  line-height: map-get($line-spaces, 'h1');
+  letter-spacing: map-get($letter-spacing, 'h1');
+}
+
+h2 {
+  font-size: map-get($font-sizes, 'h2');
+  line-height: map-get($line-spaces, 'h2');
+  letter-spacing: map-get($letter-spacing, 'h2');
+}
+
+h3 {
+  font-size: map-get($font-sizes, 'h3');
+  line-height: map-get($line-spaces, 'h3');
+  letter-spacing: map-get($letter-spacing, 'h3');
+}
+
+h4 {
+  font-size: map-get($font-sizes, 'h4');
+  line-height: map-get($line-spaces, 'h4');
+  letter-spacing: map-get($letter-spacing, 'h4');
+}
+
+h5 {
+  font-size: map-get($font-sizes, 'h5');
+  line-height: map-get($line-spaces, 'h5');
+  letter-spacing: map-get($letter-spacing, 'h5');
+}
+
+h6 {
+  font-size: map-get($font-sizes, 'h6');
+  line-height: map-get($line-spaces, 'h6');
+  letter-spacing: map-get($letter-spacing, 'h6');
+}
+
+p {
+  font-size: map-get($font-sizes, 'paragraph');
+  line-height: map-get($line-spaces, 'body');
+}
+
+.subTitle {
+  font-size: map-get($font-sizes, 'subTitle');
+  line-height: map-get($line-spaces, 'subTitle');
+  letter-spacing: map-get($letter-spacing, 'subTitle');
+}
+
+button {
+  @extend .subTitle
+}
+
+.overline {
+  font-size: map-get($font-sizes, 'overline');
+  line-height: map-get($line-spaces, 'overline');
+  letter-spacing: map-get($letter-spacing, 'overline');
+}

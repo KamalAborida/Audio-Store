@@ -1,0 +1,62 @@
+@import "../../StyleBase/variables";
+
+.textInptDiv {
+  width: fit-content;
+  // max-width: 500px;
+
+  &__labelDiv {
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+
+    &__label {
+      font-size: 12px;
+      font-weight: $font-weight-bold;
+    }
+
+    &__error {
+      font-size: 12px;
+      font-weight: $font-weight-bold;
+      color: red;
+    }
+  }
+
+  &__inpt {
+    padding: 1em 1.5em;
+    border-radius: calc($border-radius / 2);
+    border: 2px solid $dark-gray;
+    font-weight: $font-weight-bold;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $light-orange;
+      font-weight: $font-weight-bold;
+      caret-color: $light-orange;
+      &::placeholder {
+        font-size: 0;
+      }
+    }
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+
+  &__inpt-error {
+    padding: 1em 1.5em;
+    border-radius: calc($border-radius / 2);
+    border: 2px solid red;
+
+    &:focus {
+      outline: none;
+      &::placeholder {
+        font-size: 0;
+      }
+    }
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+}

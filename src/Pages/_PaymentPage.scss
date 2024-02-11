@@ -1,0 +1,23 @@
+.paymentPage {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  // border: 2px solid red;
+  margin: 40px auto;
+  // background-color: whitesmoke;
+
+  &__Header {
+    background-color: black;
+    width: 100%;
+    height: 79px;
+    margin-bottom: 80px;
+  }
+}
+
+.whiteSmoke-background {
+  background-color: #F2F2F2;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

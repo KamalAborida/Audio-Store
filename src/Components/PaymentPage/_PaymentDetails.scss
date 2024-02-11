@@ -1,0 +1,28 @@
+.paymentDetails {
+  &__paymentMethod {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 20px;
+    
+    .radioInptDiv {
+      // border: 1px solid red;
+      width: 100%;
+    }
+
+    .radioInptDiv:last-of-type {
+      grid-column: 2/3;
+      margin-top: 10px;
+    }
+  }
+
+  &__inputsDiv__inputsDiv {
+    display: flex;
+    justify-content: space-between;
+    .textInptDiv {
+      width: 49%;
+      // border: 2px solid red;
+    }
+  }
+
+  // border: 2px solid red;
+}

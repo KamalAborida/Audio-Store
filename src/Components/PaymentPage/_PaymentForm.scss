@@ -1,0 +1,20 @@
+.paymentForm {
+  // border: 2px solid green;
+  width: 62%;
+  padding:3em;
+  background-color: white;
+  border-radius: $border-radius;
+
+  &__title {
+    margin-bottom: 30px;
+    @include apply-font-styles("h3");
+    font-weight: $font-weight-bold;
+  }
+
+  .partTitle {
+    color: $dark-orange;
+    @include apply-font-styles("subTitle");
+    font-weight: $font-weight-bold;
+    margin-bottom: 10px;
+  }
+}

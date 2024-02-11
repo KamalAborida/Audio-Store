@@ -1,0 +1,38 @@
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid black;
+  margin: 10px 0;
+  align-items: center;
+
+  &__info {
+    display: flex;
+    // justify-content: space-between;
+    // border: 1px solid red;
+    width: 55%;
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: first baseline;
+      // border: 1px solid black;
+
+      &__price,
+      &__name {
+        @include apply-font-styles("subTitle");
+      }
+  
+      &__name {
+        font-weight: $font-weight-bold;
+      }
+    }
+
+
+    &__img {
+      margin-right: 15px;
+      max-width: 35%;
+      border-radius: 10px;
+    }
+  }
+}

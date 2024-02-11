@@ -1,0 +1,11 @@
+.moneyPaid {
+  display: flex;
+  justify-content: space-between;
+
+  &__amount {
+    font-weight: $font-weight-bold;
+    &-special {
+      color: $dark-orange;
+    }
+  }
+}

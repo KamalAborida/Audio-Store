@@ -1,0 +1,27 @@
+.rootPage {
+  // border: 2px solid red;
+  // height: 100vh;
+
+  > .productDiv {
+    width: 70%;
+    margin: 100px auto;
+    // border: 5px solid green;
+
+    .productDiv__contentDiv {
+      // border: 2px solid blue
+    }
+
+    .productDiv__contentDiv__title {
+      @include apply-font-styles("h2");
+      margin-bottom: 30px;
+    }
+
+    .productDiv__img {
+      width: 50%;
+    }
+
+    .productDiv__contentDiv__btnsDiv {
+      display:none;
+    }
+  }
+}

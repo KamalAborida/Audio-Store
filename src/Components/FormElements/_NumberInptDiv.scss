@@ -1,0 +1,31 @@
+.numberInptDiv {
+  background-color: $dark-gray;
+  width: 100px;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+
+  &:hover {
+    cursor: default;
+  }
+
+  &__minus,
+  &__plus {
+    color: gray;
+    
+
+    &:hover {
+      color: $light-orange;
+      font-weight: $font-weight-bold;
+      cursor: pointer;
+    }
+  }
+
+  &__number {
+    font-weight: $font-weight-bold;
+    &:hover {
+      cursor: default;
+    }
+  }
+}

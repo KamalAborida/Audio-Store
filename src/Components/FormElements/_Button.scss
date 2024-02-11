@@ -1,0 +1,39 @@
+.btn {
+  padding: 1em 2em;
+  background-color: red;
+  font-weight: $font-weight-bold;
+  // font-size: map-get($font-sizes, 'subTitle');
+  // line-height: map-get($line-spaces, 'subTitle');
+  // letter-spacing: map-get($letter-spacing, 'subTitle');
+
+  &-1 {
+    background-color: $dark-orange;
+    border: 0;
+    color: white;
+    &:hover {
+      background-color: $light-orange;
+      cursor: pointer;
+    }
+  }
+
+  &-2 {
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    &:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  &-3 {
+    background-color: transparent;
+    border: 0;
+    color: black;
+    &:hover {
+      color: $dark-orange;
+      cursor: pointer;
+    }
+  }
+}
