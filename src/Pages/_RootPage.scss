@@ -21,7 +21,35 @@
     }
 
     .productDiv__contentDiv__btnsDiv {
-      display:none;
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .rootPage {
+    > .productDiv {
+      width: 90%;
+      @include apply-center;
+      flex-direction: column-reverse;
+      // border: 5px solid green;
+
+      .productDiv__contentDiv {
+        // border: 5px solid green;
+        @include apply-center;
+        width: 90%;
+        text-align: center;
+      }
+
+      .productDiv__contentDiv__title {
+        @include apply-font-styles("h2");
+        margin-bottom: 30px;
+      }
+
+      .productDiv__img {
+        width: 100%;
+        margin-bottom: 30px;
+      }
     }
   }
 }

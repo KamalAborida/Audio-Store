@@ -5,9 +5,9 @@ function NumberInptDiv(props) {
   // dynamic type
   return (
     <div className="numberInptDiv">
-      <p className="numberInptDiv__minus">-</p>
-      <p className="numberInptDiv__number">0</p>
-      <p className="numberInptDiv__plus">+</p>
+      <p onClick={props.numberInptHandler} className="numberInptDiv__minus">-</p>
+      <p className="numberInptDiv__number">{props.currentNumber || 0}</p>
+      <p onClick={props.numberInptHandler} className="numberInptDiv__plus">+</p>
     </div>
   );
 }

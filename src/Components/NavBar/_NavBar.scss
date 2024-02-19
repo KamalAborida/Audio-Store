@@ -10,6 +10,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   width: 70%;
+  z-index: 300;
 
   &__logo {
     height: 40%;
@@ -42,10 +43,48 @@
       color: $dark-orange;
     }
 
-    &__element:active,  &__element:focus{
+    &__element:active,
+    &__element:focus {
       color: $dark-orange;
       text-decoration: none;
       border: unset;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navBar {
+    width: 90%;
+
+    &__logoMenu {
+      display: flex;
+      color: white;
+      justify-content: space-between;
+      align-items: center;
+      width: 28%;
+    }
+
+    .hamburger {
+      &:hover {
+        color: $dark-orange;
+        cursor: pointer;
+        fill: $dark-orange;
+      }
+    }
+
+    & > &__navElements {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navBar {
+    width: 100%;
+    padding: 0 1em;
+
+    &__logoMenu {
+      width: 70%;
     }
   }
 }

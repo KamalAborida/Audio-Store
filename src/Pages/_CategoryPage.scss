@@ -34,3 +34,41 @@
     }
   }
 }
+
+
+@media screen and (max-width: 900px) {
+  .categoryPage {
+    &__productsList {
+      // border: 2px solid red;
+      margin: 50px auto;
+      width: 90%;
+  
+      .productDiv {
+        @include apply-center;
+
+        &__contentDiv {
+          @include apply-center;
+          width: 90%;
+          text-align: center;
+          &__title {
+            margin-bottom: 40px;
+          }
+          &__btnsDiv {
+            display: flex;
+            justify-content: center;
+          }
+        }
+  
+        &__img {
+          border-radius: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+
+      .productDiv:nth-child(2) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}

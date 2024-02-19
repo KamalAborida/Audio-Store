@@ -1,5 +1,6 @@
 import FooterLeft from "./FooterLeft";
 import FooterRight from "./FooterRight";
+import SocialMediaList from "./SocialMediaList";
 
 function Footer(props) {
   // dynamic checked or not
@@ -7,6 +8,7 @@ function Footer(props) {
     <div className="footer">
       <FooterLeft />
       <FooterRight />
+      <SocialMediaList />
     </div>
   );
 }

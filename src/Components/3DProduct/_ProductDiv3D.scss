@@ -33,3 +33,26 @@
     // border: 2px solid red;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .productCollection {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .productCollection {
+    flex-direction: column;
+    width: 90%;
+    // border: 2px solid red;
+    height: 100vh;
+  }
+
+  .productDiv3d {
+    // border: 2px solid red;
+    width: 100%;
+    height: 25%;
+    // margin-bottom: 100px;
+    // margin: 50%;
+  }
+}

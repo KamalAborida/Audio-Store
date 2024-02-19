@@ -19,12 +19,18 @@
 
 @import "./Components/PaymentPage/BillingDeyails";
 @import "./Components/Cart/Modal";
+@import "./Components/HomePage/StarredProductsDiv";
+@import "./Components/ProductDetails/FeaturesList";
+@import "./Components/ProductDetails/ImgCollague";
+@import "./Components/ProductDetails/OtherProducts";
 @import "./Components/PaymentPage/PaymentForm";
 @import "./Components/PaymentPage/ShippingDetails";
 @import "./Components/PaymentPage/PaymentDetails.scss";
 @import "./Components/PaymentPage/PaymentRecipt";
 @import "./Components/PaymentPage/MoneyPaid";
 @import "./Components/PaymentPage/SummaryItem";
+@import "./Components/SuccessModal/SuccessModal";
+@import "./Components/Hamburger/HamburgerModal";
 
 @import "./Pages/RootPage";
 @import "./Pages/HomePage";

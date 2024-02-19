@@ -13,23 +13,35 @@ function CategoryPage() {
   const imagesArray = [];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (!data.record || data.record.length === 0) {
-      dispatch(dataActions.initiateData(data));
-    }
-  });
+    const loadEvents = async () => {
+      const resp = await loader();
+      dispatch(dataActions.initiateData(resp));
+    };
 
-  if (data) {
+    window.scrollTo(0, 0);
+
+    if (!data.record) {
+      loadEvents();
+    }
+  }, [data, dispatch]);
+
+  if (data && data.record) {
     data.record.forEach((element) => {
       if (
         element.category.toLowerCase() === params.categoryName.toLowerCase()
       ) {
         productsList.push(element);
-        const img = require(`../Assets/product-${element.slug}/desktop/image-category-page-preview.jpg`);
+        let img;
+        if (window.innerWidth > 900) {
+          img = require(`../Assets/product-${element.slug}/desktop/image-category-page-preview.jpg`);
+        } else if (window.innerWidth > 350) {
+          img = require(`../Assets/product-${element.slug}/tablet/image-category-page-preview.jpg`);
+        } else {
+          img = require(`../Assets/product-${element.slug}/mobile/image-category-page-preview.jpg`);
+        }
         imagesArray.push(img);
       }
     });
-    console.log(productsList, imagesArray);
   }
 
   return (
@@ -48,7 +60,7 @@ function CategoryPage() {
               textPosition="left"
               imgPosition={indx % 2 !== 0 ? "right" : "left"}
               img={imagesArray[indx]}
-              isNew={false}
+              isNew={indx === 1 ? true : false}
               title={elem.name}
               desription={elem.description}
               type="toSee"

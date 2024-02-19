@@ -1,8 +1,21 @@
 function ImgCollague(props) {
-  const img1 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-1.jpg`)
-  const img2 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-2.jpg`)
-  const img3 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-3.jpg`)
+  let img1;
+  let img2;
+  let img3;
 
+  if (window.innerWidth > 900) {
+    img1 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-1.jpg`);
+    img2 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-2.jpg`);
+    img3 = require(`../../Assets/product-${props.product.slug}/desktop/image-gallery-3.jpg`);
+  } else if (window.innerWidth > 350) {
+    img1 = require(`../../Assets/product-${props.product.slug}/tablet/image-gallery-1.jpg`);
+    img2 = require(`../../Assets/product-${props.product.slug}/tablet/image-gallery-2.jpg`);
+    img3 = require(`../../Assets/product-${props.product.slug}/tablet/image-gallery-3.jpg`);
+  } else {
+    img1 = require(`../../Assets/product-${props.product.slug}/mobile/image-gallery-1.jpg`);
+    img2 = require(`../../Assets/product-${props.product.slug}/mobile/image-gallery-2.jpg`);
+    img3 = require(`../../Assets/product-${props.product.slug}/mobile/image-gallery-3.jpg`);
+  }
 
   return (
     <div className="productDetails__content__imgCollague">

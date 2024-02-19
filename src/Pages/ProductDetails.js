@@ -5,34 +5,81 @@ import ImgCollague from "../Components/ProductDetails/ImgCollague";
 import ProductCollection from "../Components/3DProduct/ProductCollection";
 import Button from "../Components/FormElements/Button";
 import OtherProducts from "../Components/ProductDetails/OtherProducts";
-import { useContext, useEffect } from "react";
-import { redirect, useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import ModalContext from "../Components/Context/modal-context"
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import ModalContext from "../Components/Context/modal-context";
+import { cartActions } from "../Store/cart-slice";
+import { loader } from "./HomePage";
+import { dataActions } from "../Store/data-slice";
 
 function ProductDetails() {
   const params = useParams();
   const data = useSelector((state) => state.data.items);
-  const ctx = useContext(ModalContext)
+  const ctx = useContext(ModalContext);
+  const [productQuantity, setProductQuantity] = useState(1);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   let img;
 
   if (data.record) {
-    img = require(`../Assets/product-${
-      data.record[params.productId - 1].slug
-    }/desktop/image-product.jpg`);
+    if (window.innerWidth > 900) {
+      img = require(`../Assets/product-${
+        data.record[params.productId - 1].slug
+      }/desktop/image-product.jpg`);
+    } else if (window.innerWidth > 350) {
+      img = require(`../Assets/product-${
+        data.record[params.productId - 1].slug
+      }/tablet/image-product.jpg`);
+    } else {
+      img = require(`../Assets/product-${
+        data.record[params.productId - 1].slug
+      }/mobile/image-product.jpg`);
+    }
   }
 
   useEffect(() => {
+    const loadEvents = async () => {
+      const resp = await loader();
+      dispatch(dataActions.initiateData(resp));
+    };
+
     window.scrollTo(0, 0);
+
     if (!data.record) {
-      ctx.reRender()
+      loadEvents();
     }
-  }, [data]);
+  }, [data, dispatch]);
 
   const goBackHandler = () => {
     navigate("/");
+  };
+
+  const buyHandler = () => {
+    dispatch(
+      cartActions.addItemToCart({
+        id: data.record[params.productId - 1].id,
+        price: data.record[params.productId - 1].price,
+        quantity: productQuantity,
+        name: data.record[params.productId - 1].slug,
+      })
+    );
+  };
+
+  const numberInptHandler = (e) => {
+    if (e.target.textContent === "+") {
+      setProductQuantity((prev) => {
+        const newNumber = prev + 1;
+        return newNumber;
+      });
+    } else if (e.target.textContent === "-") {
+      setProductQuantity((prev) => {
+        const newNumber = prev - 1;
+        console.log(newNumber);
+        return newNumber;
+      });
+    }
   };
 
   return (
@@ -51,10 +98,13 @@ function ProductDetails() {
               isNew={data.record[params.productId - 1].new}
               price={data.record[params.productId - 1].price}
               title={data.record[params.productId - 1].name}
-              desription={data.record[params.productId - 1].desription}
+              desription={data.record[params.productId - 1].description}
               type="toBuy"
               btnType="1"
               id={data.record[params.productId - 1].id}
+              btnHandler={buyHandler}
+              numberInptHandler={numberInptHandler}
+              currentNumber={productQuantity}
             />
             <div className="productDetails__content__features">
               <FeaturesList

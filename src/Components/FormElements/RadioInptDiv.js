@@ -5,9 +5,11 @@ function RadioInptDiv(props) {
       <input
         className="radioInptDiv__inpt"
         type="radio"
-        id={props.label}
-        name={props.choicesFor}
-        value={props.label}
+        id={props.label.toLowerCase()}
+        name={props.choicesFor.toLowerCase()}
+        value={props.label.toLowerCase()}
+        defaultChecked={props.isActive}
+        onClick={props.onClick}
       />
       <label htmlFor={props.label} className="radioInptDiv__label">
         {props.label}

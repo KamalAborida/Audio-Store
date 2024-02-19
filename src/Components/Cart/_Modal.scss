@@ -25,6 +25,13 @@
       @include apply-font-styles("h5");
       font-weight: $font-weight-bold;
     }
+
+    &__remove {
+      text-decoration: underline;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   & > .moneyPaid {

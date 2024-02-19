@@ -6,14 +6,15 @@ function TextInptDiv(props) {
     <div className="textInptDiv">
       <div className="textInptDiv__labelDiv">
         <label className="textInptDiv__labelDiv__label">{props.label}</label>
-        {false && <p className="textInptDiv__labelDiv__error">Wrong format</p>}
+        {props.error && <p className="textInptDiv__labelDiv__error">Wrong format</p>}
       </div>
       <input
-        className={`textInptDiv__inpt`}
+        className={`textInptDiv__inpt ${props.error ? "textInptDiv__inpt-error" : ""}`}
         type="text"
         id={props.label}
         name={props.label}
         placeholder={props.placeholder}
+        onChange={props.onChangeHandler}
       />
     </div>
   );

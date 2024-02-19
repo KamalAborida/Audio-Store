@@ -1,24 +1,29 @@
 import ProductDiv from "../ProductDiv/ProductDiv";
-import img from "../../Assets/product-xx99-mark-one-headphones/desktop/image-product.jpg"
+import img from "../../Assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
 import { useSelector } from "react-redux";
 
 function OtherProducts(props) {
   const data = useSelector((state) => state.data.items);
-  const otherProducts = []
-  const imagesList = []
+  const otherProducts = [];
+  const imagesList = [];
 
   if (data) {
-    data.record.forEach(element => {
+    data.record.forEach((element) => {
       for (let i = 0; i < props.others.length; i++) {
         const secondArrElem = props.others[i];
-        console.log(element.slug, secondArrElem.slug);
         if (element.slug === secondArrElem.slug) {
-          otherProducts.push(element)
-          const img = require(`../../Assets/product-${element.slug}/desktop/image-category-page-preview.jpg`)
-          imagesList.push(img)
+          otherProducts.push(element);
+          let img
+          if (window.innerWidth > 900) {
+            img = require(`../../Assets/product-${element.slug}/desktop/image-category-page-preview.jpg`);
+          } else if (window.innerWidth > 350) {
+            img = require(`../../Assets/product-${element.slug}/tablet/image-category-page-preview.jpg`);
+          } else {
+            img = require(`../../Assets/product-${element.slug}/mobile/image-category-page-preview.jpg`);
+          }
+          imagesList.push(img);
         }
       }
-
     });
   }
 

@@ -53,3 +53,10 @@ $letter-spacing: (
   line-height: map-get($line-spaces, $type);
   letter-spacing: map-get($letter-spacing, $type);
 }
+
+@mixin apply-center() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -44,9 +44,18 @@ function ProductDiv(props) {
             />
           )}
           {props.type === "toBuy" && (
-            <Button title="ADD TO CART" type={`${props.btnType || "1"}`} />
+            <Button
+              title="ADD TO CART"
+              type={`${props.btnType || "1"}`}
+              btnHandler={props.btnHandler}
+            />
           )}
-          {props.type === "toBuy" && <NumberInptDiv />}
+          {props.type === "toBuy" && (
+            <NumberInptDiv
+              currentNumber={props.currentNumber}
+              numberInptHandler={props.numberInptHandler}
+            />
+          )}
         </div>
       </div>
 

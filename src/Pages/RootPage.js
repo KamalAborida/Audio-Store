@@ -3,33 +3,55 @@ import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
 import ProductDiv from "../Components/ProductDiv/ProductDiv";
 import adImg from "../Assets/shared/desktop/image-best-gear.jpg";
-import { useContext, useState } from "react";
+import adImgTablet from "../Assets/shared/tablet/image-best-gear.jpg";
+import adImgMobile from "../Assets/shared/mobile/image-best-gear.jpg";
+import { useContext, useEffect, useState } from "react";
 import Backdrop from "../Components/Cart/Backdrop";
 import CartModal from "../Components/Cart/CartModal";
 import ModalContext from "../Components/Context/modal-context";
+import HamburgerModal from "../Components/Hamburger/HamburgerModal";
 
 function RootPage() {
-  const [openModal, setOpenModal] = useState(false)
-  const ctx = useContext(ModalContext)
+  const [openModal, setOpenModal] = useState(false);
+  const [openHamburger, setOpenHamburger] = useState(false);
+  const [adImageSize, setAdImageSize] = useState(adImg);
+  const ctx = useContext(ModalContext);
 
   ctx.closeModalCart = () => {
-    setOpenModal(false)
-  }
+    setOpenModal(false);
+    setOpenHamburger(false);
+  };
 
   ctx.openModalCart = () => {
-    setOpenModal(true)
-  }
+    setOpenModal(true);
+  };
+
+  const openHamburgerHandler = () => {
+    setOpenHamburger(true);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth > 900) {
+      setAdImageSize(adImg);
+    } else if (window.innerWidth > 400) {
+      setAdImageSize(adImgTablet);
+    } else {
+      setAdImageSize(adImgMobile);
+    }
+  }, []);
 
   return (
     <div className="rootPage">
-      <NavBar />
+      <NavBar openHamburgerHandler={openHamburgerHandler} />
+      {openHamburger && <HamburgerModal />}
+      {openHamburger && <Backdrop />}
       {openModal && <Backdrop />}
       {openModal && <CartModal />}
       <Outlet />
       <ProductDiv
         textPosition="left"
         imgPosition="right"
-        img={adImg}
+        img={adImageSize}
         price=""
         isNew={false}
         title="BRINGING YOU THE BEST AUDIO GEAR"

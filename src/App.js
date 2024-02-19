@@ -1,5 +1,5 @@
 import "./main.css";
-import { createBrowserRouter, redirect, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootPage from "./Pages/RootPage";
 import HomePage from "./Pages/HomePage";
 import ProductDetails from "./Pages/ProductDetails";
@@ -9,8 +9,6 @@ import ModalContext from "./Components/Context/modal-context";
 import { useState } from "react";
 
 function App() {
-  const [reRender, setReRender] = useState([])
-
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -38,13 +36,10 @@ function App() {
   ]);
   return (
     <ModalContext.Provider
-      value={{ closeModalCart: () => {}, openModalCart: () => {}, reRender: () => {
-        setReRender(prev => {
-          console.log(prev);
-          return []
-        })
-        console.log("done");
-      } }}
+      value={{
+        closeModalCart: () => {},
+        openModalCart: () => {},
+      }}
     >
       <RouterProvider router={routes} />
     </ModalContext.Provider>

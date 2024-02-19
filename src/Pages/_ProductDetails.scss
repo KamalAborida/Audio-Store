@@ -20,67 +20,8 @@
     width: 70%;
     margin: 50px auto;
 
-    &__features {
-      display: flex;
-      justify-content: space-between;
-      margin: 120px auto;
-
-      & h3 {
-        margin-bottom: 20px;
-      }
-
-      &__featureslist {
-        // border: 2px solid red;
-        width: 65%;
-      }
-
-      &__inTheBox {
-        // border: 2px solid red;
-        width: 25%;
-
-        &__list > li {
-          margin-bottom: 15px;
-
-          & span {
-            color: $dark-orange;
-            font-weight: $font-weight-bold;
-            margin-right: 20px;
-          }
-        }
-      }
-    }
-
-    &__imgCollague {
-      // border: 2px solid red;
-      display: flex;
-      justify-content: space-between;
-      height: 600px;
-
-      &__column1 {
-        width: 40%;
-        // border: 2px solid green;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        img {
-          height: 49%;
-          max-width: 100%;
-          border-radius: 15px;
-        }
-      }
-
-      &__column2 {
-        width: 58%;
-        // border: 2px solid red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        img {
-          max-width: 100%;
-          border-radius: 15px;
-        }
-      }
+    img {
+      border-radius: 10px;
     }
   }
 
@@ -89,40 +30,50 @@
     width: 100%;
     margin: 100px 0;
   }
+}
 
-  &__otherProducts {
-    // border: 2px solid red;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin: 150px auto;
+@media screen and (max-width: 900px) {
+  .productDetails {
+    &__btnDiv {
+      width: 90%;
+    }
 
-    .productDiv {
-      // border: 1px solid green;
-      width: 32%;
-      &__contentDiv {
-        // border: 2px solid black;
-        width: 100%;
+    &__content {
+      width: 90%;
 
-        &__title {
-          margin: 30px 0 0 0;
-          @include apply-font-styles("h6");
-        }
-
-        &__btnsDiv {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-
-          button {
-            width: 60%;
+      & > .productDiv {
+        // border: 2px solid red;
+        .productDiv__contentDiv {
+          // border: 1px solid green;
+          &__btnsDiv {
+            width: 100%;
           }
         }
       }
+    }
+  }
+}
 
-      &__img {
-        width: 100%;
-        border-radius: $border-radius;
+@media screen and (max-width: 450px) {
+  .productDetails {
+    &__content {
+      & > .productDiv {
+        // border: 2px solid red;
+        flex-direction: column;
+        .productDiv__img {
+          width: 100%;
+          margin-bottom: 25px;
+        }
+        .productDiv__contentDiv {
+          // border: 1px solid green;
+          width: 100%;
+          &__title {
+            @include apply-font-styles("h2");
+          }
+          &__btnsDiv {
+            width: 100%;
+          }
+        }
       }
     }
   }
