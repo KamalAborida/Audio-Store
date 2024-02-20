@@ -1,12 +1,16 @@
-import { useParams } from "react-router-dom";
+import { useNavigation, useParams } from "react-router-dom";
 import ProductCollection from "../Components/3DProduct/ProductCollection";
 import ProductDiv from "../Components/ProductDiv/ProductDiv";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { dataActions } from "../Store/data-slice";
+// import loadingIndicator from "../Assets/Wedges-3s-200px.gif"
+import loadingIndicator from "../Assets/Infinity-1s-263px.gif";
+import { motion } from "framer-motion";
 
 function CategoryPage() {
   const params = useParams();
+  const navigation = useNavigation();
   const data = useSelector((state) => state.data.items);
   const dispatch = useDispatch();
   const productsList = [];
@@ -46,14 +50,27 @@ function CategoryPage() {
 
   return (
     <div className="categoryPage">
+      {navigation.state === "loading" && (
+        <img
+          className="loadingIndicator"
+          src={loadingIndicator}
+          alt="loading..."
+        />
+      )}
       <header className="categoryPage__header">
-        <div className="categoryPage__header__container">
+        <motion.div
+          animate={{ opacity: [0, 1] }}
+          className="categoryPage__header__container"
+        >
           <h1 className="categoryPage__header__container__title">
             {params.categoryName}
           </h1>
-        </div>
+        </motion.div>
       </header>
-      <div className="categoryPage__productsList">
+      <motion.div
+        className="categoryPage__productsList"
+        animate={{ opacity: [0, 1], x: [50, 0] }}
+      >
         {productsList.map((elem, indx) => {
           return (
             <ProductDiv
@@ -71,7 +88,7 @@ function CategoryPage() {
             />
           );
         })}
-      </div>
+      </motion.div>
       <ProductCollection />
     </div>
   );

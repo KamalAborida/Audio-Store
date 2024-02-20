@@ -2,25 +2,38 @@ import { useContext, useEffect, useState } from "react";
 import ProductCollection from "../Components/3DProduct/ProductCollection";
 import StarredProductsDiv from "../Components/HomePage/StarredProductsDiv";
 import ProductDiv from "../Components/ProductDiv/ProductDiv";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { dataActions } from "../Store/data-slice";
-import ModalContext from "../Components/Context/modal-context";
+import { motion } from "framer-motion";
+// import loadingIndicator from "../Assets/Wedges-3s-200px.gif"
+import loadingIndicator from "../Assets/Infinity-1s-263px.gif";
 
 function HomePage() {
-  const dispatch = useDispatch()
-  const data = useLoaderData()
+  const dispatch = useDispatch();
+  const data = useLoaderData();
+  const navigation = useNavigation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     // console.log(data);
-    dispatch(dataActions.initiateData(data))
+    dispatch(dataActions.initiateData(data));
   });
 
   return (
     <div className="homePage">
+      {navigation.state === "loading" && (
+        <img
+          className="loadingIndicator"
+          src={loadingIndicator}
+          alt="loading..."
+        />
+      )}
       <header className="homePage__header">
-        <div className="homePage__header__container">
+        <motion.div
+          animate={{ opacity: [0, 1], y: [50, 0] }}
+          className="homePage__header__container"
+        >
           <ProductDiv
             textPosition="left"
             isNew={data.record[2].new}
@@ -31,7 +44,7 @@ function HomePage() {
             id={data.record[2].id}
             category={data.record[2].category}
           />
-        </div>
+        </motion.div>
       </header>
       <ProductCollection />
       <StarredProductsDiv />

@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
 import ProductDiv from "../Components/ProductDiv/ProductDiv";
@@ -10,11 +10,13 @@ import Backdrop from "../Components/Cart/Backdrop";
 import CartModal from "../Components/Cart/CartModal";
 import ModalContext from "../Components/Context/modal-context";
 import HamburgerModal from "../Components/Hamburger/HamburgerModal";
+import { AnimatePresence } from "framer-motion";
 
 function RootPage() {
   const [openModal, setOpenModal] = useState(false);
   const [openHamburger, setOpenHamburger] = useState(false);
   const [adImageSize, setAdImageSize] = useState(adImg);
+  const navigation = useNavigation()
   const ctx = useContext(ModalContext);
 
   ctx.closeModalCart = () => {
@@ -27,7 +29,7 @@ function RootPage() {
   };
 
   const openHamburgerHandler = () => {
-    setOpenHamburger(true);
+    setOpenHamburger(prev => !prev);
   };
 
   useEffect(() => {
@@ -43,10 +45,10 @@ function RootPage() {
   return (
     <div className="rootPage">
       <NavBar openHamburgerHandler={openHamburgerHandler} />
-      {openHamburger && <HamburgerModal />}
-      {openHamburger && <Backdrop />}
-      {openModal && <Backdrop />}
-      {openModal && <CartModal />}
+      <AnimatePresence>{openHamburger && <HamburgerModal />}</AnimatePresence>
+      <AnimatePresence>{openHamburger && <Backdrop />}</AnimatePresence>
+      <AnimatePresence>{openModal && <Backdrop />}</AnimatePresence>
+      <AnimatePresence>{openModal && <CartModal />}</AnimatePresence>
       <Outlet />
       <ProductDiv
         textPosition="left"

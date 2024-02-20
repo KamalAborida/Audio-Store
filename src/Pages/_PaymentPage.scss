@@ -21,3 +21,15 @@
   height: 100%;
   z-index: -1;
 }
+
+@media screen and (max-width: 900px) {
+  .paymentPage {
+    flex-direction: column;
+    width: 90%;
+    // border: 2px solid red;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+}

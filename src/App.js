@@ -6,7 +6,6 @@ import ProductDetails from "./Pages/ProductDetails";
 import CategoryPage, { loader } from "./Pages/CategoryPage";
 import PaymentPage from "./Pages/PaymentPage";
 import ModalContext from "./Components/Context/modal-context";
-import { useState } from "react";
 
 function App() {
   const routes = createBrowserRouter([

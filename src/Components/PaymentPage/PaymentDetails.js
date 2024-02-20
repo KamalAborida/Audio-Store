@@ -27,7 +27,7 @@ function PaymentDetails() {
       <h6 className="paymentDetails__title partTitle">PAYMENT DETAILS</h6>
       <div className="paymentDetails__inputsDiv">
         <div className="paymentDetails__paymentMethod">
-          <h6>Payment Method</h6>
+          <h6 className="paymentDetails__paymentMethod__title">Payment Method</h6>
           <RadioInptDiv
             label="e-Money"
             choicesFor="paymentMethod"

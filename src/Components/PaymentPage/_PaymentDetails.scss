@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-bottom: 20px;
-    
+
     .radioInptDiv {
       // border: 1px solid red;
       width: 100%;
@@ -30,9 +30,49 @@
     }
 
     &__cashP {
-      @include apply-font-styles("subTitle")
+      @include apply-font-styles("subTitle");
     }
   }
 
   // border: 2px solid red;
+}
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 450px) {
+  .paymentDetails {
+    &__paymentMethod {
+      // border: 1px solid red;
+      display: block;
+      text-align: center;
+
+      &__title {
+        margin: 20px auto;
+      }
+    }
+
+    &__inputsDiv__inputsDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid black;
+      .textInptDiv {
+        width: 100%;
+        margin-bottom: 20px;
+        // border: 2px solid red;
+      }
+
+      &__cashImg {
+        // border: 1px solid red;
+        margin-right: unset;
+        margin-bottom: 20px;
+      }
+
+      &__cashP {
+        text-align: center;
+      }
+    }
+  }
 }

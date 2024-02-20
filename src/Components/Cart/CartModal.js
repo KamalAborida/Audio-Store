@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../Store/cart-slice";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function CartModal(props) {
   const cartData = useSelector((state) => state.cart.cartItems);
@@ -13,7 +14,7 @@ function CartModal(props) {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [itemsList, setItemsList] = useState(cartData);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const numberInptHandler = (e) => {
     dispatch(
@@ -25,22 +26,28 @@ function CartModal(props) {
   };
 
   const removeAllHandler = () => {
-    dispatch(cartActions.removeAll())
-  }
+    dispatch(cartActions.removeAll());
+  };
 
   const checkoutHandler = () => {
-    navigate("payment")
-  }
+    navigate("payment");
+  };
 
   useEffect(() => {
     setItemsList(cartData);
   }, [cartData]);
 
   return React.createPortal(
-    <div className="cartModal">
+    <motion.div
+      className="cartModal"
+      animate={{ opacity: 1, y: [100, 0] }}
+      exit={{ opacity: 0, y: [0, 50] }}
+    >
       <div className="cartModal__titleDiv">
         <h3 className="cartModal__titleDiv__title">CART ({totalQuantity})</h3>
-        <p onClick={removeAllHandler} className="cartModal__titleDiv__remove">Remove all</p>
+        <p onClick={removeAllHandler} className="cartModal__titleDiv__remove">
+          Remove all
+        </p>
       </div>
       <div className="cartModal__items">
         {itemsList.map((elem) => {
@@ -58,8 +65,8 @@ function CartModal(props) {
         })}
       </div>
       <MoneyPaid title="TOTAL" amount={totalPrice} />
-      <Button type="1" title="CHECKOUT" btnHandler={checkoutHandler}/>
-    </div>,
+      <Button type="1" title="CHECKOUT" btnHandler={checkoutHandler} />
+    </motion.div>,
     document.getElementById("modal")
   );
 }

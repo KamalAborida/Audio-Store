@@ -1,11 +1,17 @@
-import ProductCollection from "../3DProduct/ProductCollection"
+import ProductCollection from "../3DProduct/ProductCollection";
+import { motion } from "framer-motion";
 
 function HamburgerModal() {
   return (
-    <div className="hamburgerModal">
+    <motion.div
+      animate={{ x: [-1000, 0] }}
+      exit={{ x: [0, -1000] }}
+      transition={{type: "keyframes"}}
+      className="hamburgerModal"
+    >
       <ProductCollection />
-    </div>
-  )
+    </motion.div>
+  );
 }
 
-export default HamburgerModal
+export default HamburgerModal;

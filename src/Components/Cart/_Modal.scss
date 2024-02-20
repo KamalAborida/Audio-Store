@@ -42,3 +42,16 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .cartModal {
+    width: 60%;
+    right: 5%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cartModal {
+    width: 90%;
+  }
+}

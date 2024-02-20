@@ -6,16 +6,20 @@ import ProductCollection from "../Components/3DProduct/ProductCollection";
 import Button from "../Components/FormElements/Button";
 import OtherProducts from "../Components/ProductDetails/OtherProducts";
 import { useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useNavigation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ModalContext from "../Components/Context/modal-context";
 import { cartActions } from "../Store/cart-slice";
 import { loader } from "./HomePage";
 import { dataActions } from "../Store/data-slice";
+// import loadingIndicator from "../Assets/Wedges-3s-200px.gif"
+import loadingIndicator from "../Assets/Infinity-1s-263px.gif";
+import { motion } from "framer-motion";
 
 function ProductDetails() {
   const params = useParams();
   const data = useSelector((state) => state.data.items);
+  const navigation = useNavigation();
   const ctx = useContext(ModalContext);
   const [productQuantity, setProductQuantity] = useState(1);
   const navigate = useNavigate();
@@ -84,13 +88,23 @@ function ProductDetails() {
 
   return (
     <div className="productDetails">
+      {navigation.state === "loading" && (
+        <img
+          className="loadingIndicator"
+          src={loadingIndicator}
+          alt="loading..."
+        />
+      )}
       {data.record && (
         <>
           <header className="productDetails__header"></header>
           <div className="productDetails__btnDiv">
             <Button btnHandler={goBackHandler} type="3" title="< Go Back" />
           </div>
-          <div className="productDetails__content">
+          <motion.div
+            animate={{ opacity: [0, 1], x: [50, 0] }}
+            className="productDetails__content"
+          >
             <ProductDiv
               textPosition="left"
               imgPosition="left"
@@ -115,7 +129,7 @@ function ProductDetails() {
             <ImgCollague product={data.record[params.productId - 1]} />
             <OtherProducts others={data.record[params.productId - 1].others} />
             <ProductCollection />
-          </div>
+          </motion.div>
         </>
       )}
     </div>

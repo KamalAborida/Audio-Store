@@ -7,7 +7,7 @@ function SummaryPayment() {
     <div className="summaryPayment">
       <MoneyPaid title="TOTAL" amount={totalPrice} />
       <MoneyPaid title="SHIPPING" amount="50" />
-      <MoneyPaid title="VAT (INCLUDED)" amount={totalPrice * (15/100)} />
+      <MoneyPaid title="VAT (INCLUDED)" amount={Math.ceil(totalPrice * (15/100))} />
     </div>
   );
 }

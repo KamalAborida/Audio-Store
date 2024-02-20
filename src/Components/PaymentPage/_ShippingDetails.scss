@@ -30,3 +30,30 @@
 
   // border: 2px solid red;
 }
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 450px) {
+  .shippingDetails {
+    // margin-bottom: 50px;
+    .inputsDiv {
+      // border: 1px solid red;
+      display: block;
+
+      .textInptDiv {
+        // border: 5px solid black;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .dropDownDiv {
+        // border: 2px solid black;
+        margin-bottom: 20px;
+        .dropDownDiv__dropDown {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
