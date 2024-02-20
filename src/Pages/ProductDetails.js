@@ -54,7 +54,7 @@ function ProductDetails() {
     if (!data.record) {
       loadEvents();
     }
-  }, [data, dispatch]);
+  }, [data, dispatch, img]);
 
   const goBackHandler = () => {
     navigate("/");

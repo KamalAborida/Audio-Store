@@ -27,7 +27,7 @@ function CategoryPage() {
     if (!data.record) {
       loadEvents();
     }
-  }, [data, dispatch]);
+  }, [data, dispatch, params.categoryName]);
 
   if (data && data.record) {
     data.record.forEach((element) => {
