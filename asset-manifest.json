@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/Audio-Store/static/css/main.435a1859.css",
+    "main.js": "/Audio-Store/static/js/main.822f6f04.js",
+    "static/js/787.0f8d78ff.chunk.js": "/Audio-Store/static/js/787.0f8d78ff.chunk.js",
+    "static/media/image-speaker-zx9.png": "/Audio-Store/static/media/image-speaker-zx9.14af4ebf7265ca4d0b0e.png",
+    "static/media/Infinity-1s-263px.gif": "/Audio-Store/static/media/Infinity-1s-263px.0fd3d034a9a4ee7c40c9.gif",
+    "static/media/image-best-gear.jpg": "/Audio-Store/static/media/image-best-gear.4d4a28e9e7c9ab158dd8.jpg",
+    "static/media/image-hero.jpg": "/Audio-Store/static/media/image-hero.fb7f46173fa4c819c755.jpg",
+    "static/media/image-gallery-3.jpg": "/Audio-Store/static/media/image-gallery-3.402d4e805943fb31ef40.jpg",
+    "static/media/image-product.jpg": "/Audio-Store/static/media/image-product.4dc7e99c2ff099acdcef.jpg",
+    "static/media/image-category-page-preview.jpg": "/Audio-Store/static/media/image-category-page-preview.1e710ed30a8f1d2b6316.jpg",
+    "static/media/image-header.jpg": "/Audio-Store/static/media/image-header.13f7f18f9ae7b105ca12.jpg",
+    "static/media/image-category-thumbnail-headphones.png": "/Audio-Store/static/media/image-category-thumbnail-headphones.fbd401d9c735a217286f.png",
+    "static/media/image-category-thumbnail-speakers.png": "/Audio-Store/static/media/image-category-thumbnail-speakers.bbb1a70b6ebc42d18df7.png",
+    "static/media/image-category-thumbnail-earphones.png": "/Audio-Store/static/media/image-category-thumbnail-earphones.6e8830d475e04b7b9627.png",
+    "static/media/image-gallery-2.jpg": "/Audio-Store/static/media/image-gallery-2.988992ea3225e6cd0070.jpg",
+    "static/media/image-gallery-1.jpg": "/Audio-Store/static/media/image-gallery-1.51bc54acb23ef4776d86.jpg",
+    "static/media/image-speaker-zx7.jpg": "/Audio-Store/static/media/image-speaker-zx7.173a4cb5c7acfc7f300c.jpg",
+    "static/media/image-earphones-yx1.jpg": "/Audio-Store/static/media/image-earphones-yx1.48e16a44bd58ed3be41e.jpg",
+    "static/media/logo.svg": "/Audio-Store/static/media/logo.e03974f8eeb36e51813ca6f10681acdc.svg",
+    "static/media/icon-cash-on-delivery.svg": "/Audio-Store/static/media/icon-cash-on-delivery.785e848865906f5c74a99125a50cea7a.svg",
+    "index.html": "/Audio-Store/index.html",
+    "static/media/icon-cart.svg": "/Audio-Store/static/media/icon-cart.5e1893a62995fc7b443abe7bee68063e.svg",
+    "static/media/icon-order-confirmation.svg": "/Audio-Store/static/media/icon-order-confirmation.6970134820e756e31360b1293c6f3e62.svg",
+    "main.435a1859.css.map": "/Audio-Store/static/css/main.435a1859.css.map",
+    "main.822f6f04.js.map": "/Audio-Store/static/js/main.822f6f04.js.map",
+    "787.0f8d78ff.chunk.js.map": "/Audio-Store/static/js/787.0f8d78ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.435a1859.css",
+    "static/js/main.822f6f04.js"
+  ]
+}
