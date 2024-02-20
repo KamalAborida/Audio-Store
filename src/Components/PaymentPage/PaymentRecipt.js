@@ -2,13 +2,15 @@ import MoneyPaid from "./MoneyPaid";
 import SummaryItem from "./SummaryItem";
 import SummaryPayment from "./SummaryPayment";
 import Button from "../FormElements/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { paymentActions } from "../../Store/payment-slice";
 
 function PaymentRecipt(props) {
   const cartData = useSelector((state) => state.cart.cartItems);
   const totalPrice = useSelector((state) => state.cart.totalPrice);
   const payment = useSelector((state) => state.paymentValidation);
+  const dispatch = useDispatch()
   const [itemsList, setItemsList] = useState(cartData);
 
   const allIsTouched =
@@ -57,7 +59,7 @@ function PaymentRecipt(props) {
         console.log("Failed Choose a method");
       }
     } else {
-      console.log("Failed");
+      dispatch(paymentActions.setAllToError())
     }
   };
 

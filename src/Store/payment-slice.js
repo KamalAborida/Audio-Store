@@ -105,6 +105,22 @@ const paymentSlice = createSlice({
         state.paymentMethod.isEPinError = false;
       }
     },
+    setAllToError(state) {
+      state.paymentMethod.isENumberTouched = true;
+      state.paymentMethod.isEPinTouched = true;
+      state.name.isTouched = true;
+      state.email.isTouched = true;
+      state.phone.isTouched = true;
+      state.address.isTouched = true;
+      state.zipCode.isTouched = true;
+      state.paymentMethod.isEPinError = true;
+      state.paymentMethod.isENumberError = true;
+      state.name.isError = true;
+      state.email.isError = true;
+      state.phone.isError = true;
+      state.address.isError = true;
+      state.zipCode.isError = true;
+    },
   },
 });
 
