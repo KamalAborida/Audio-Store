@@ -1152,7 +1152,7 @@ p {
 }
 
 .successModal {
-  z-index: 100;
+  z-index: 500;
   background-color: white;
   width: 35%;
   position: absolute;
@@ -1223,6 +1223,26 @@ p {
   width: 100%;
 }
 
+@media screen and (max-width: 900px) {
+  .successModal {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .successModal {
+    width: 90%;
+  }
+  .successModal__recipt {
+    flex-direction: column;
+  }
+  .successModal__recipt__items {
+    width: 100%;
+    padding: 1em;
+  }
+  .successModal__recipt__payment {
+    width: 100%;
+  }
+}
 .hamburgerModal {
   z-index: 500;
   position: absolute;

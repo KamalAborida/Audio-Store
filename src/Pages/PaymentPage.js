@@ -25,7 +25,7 @@ function PaymentPage() {
     if (!data.record) {
       loadEvents();
     }
-  }, [data, dispatch]);
+  }, [data, dispatch, openModal]);
 
   const closeModalSuccess = () => {
     setOpenModal(false);
@@ -34,6 +34,7 @@ function PaymentPage() {
   const openModalSuccess = () => {
     setOpenModal(true);
   };
+
 
   return (
     <>

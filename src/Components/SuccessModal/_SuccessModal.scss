@@ -1,5 +1,5 @@
 .successModal {
-  z-index: 100;
+  z-index: 500;
   background-color: white;
   // border: 2px solid red;
   width: 35%;
@@ -77,5 +77,31 @@
 
   & > .btn {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .successModal {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .successModal {
+    width: 90%;
+
+    &__recipt {
+      // border: 2px solid green;
+      flex-direction: column;
+
+      &__items {
+        width: 100%;
+        padding: 1em;
+      }
+
+      &__payment {
+        width: 100%;
+      }
+    }
   }
 }
