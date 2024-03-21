@@ -20,17 +20,17 @@ function App() {
           loader: loader,
         },
         {
-          path: `:categoryName`,
+          path: `/Audio-Store/:categoryName`,
           element: <CategoryPage />,
         },
         {
-          path: ":categoryName/:productId",
+          path: "/Audio-Store/:categoryName/:productId",
           element: <ProductDetails />,
         },
       ],
     },
     {
-      path: "/payment",
+      path: "/Audio-Store/payment",
       element: <PaymentPage />,
     },
   ]);

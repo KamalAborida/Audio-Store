@@ -7,9 +7,9 @@ function ProductDiv(props) {
 
   const navigationBtnHandler = () => {
     if (props.type === "toSee" && props.id) {
-      navigate(`/${props.category}/${props.id}`);
+      navigate(`/Audio-Store/${props.category}/${props.id}`);
     } else {
-      navigate(`/${props.category}`);
+      navigate(`/Audio-Store/${props.category}`);
     }
   };
 

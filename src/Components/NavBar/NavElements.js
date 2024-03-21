@@ -26,21 +26,21 @@ function NavElements(props) {
       <Link
         onClick={linksHandler}
         className="navBar__navElements__element"
-        to="/Headphones"
+        to="/Audio-Store/Headphones"
       >
         <li className="navBar__navElements__element">HEADPHONES</li>
       </Link>
       <Link
         onClick={linksHandler}
         className="navBar__navElements__element"
-        to="/Speakers"
+        to="/Audio-Store/Speakers"
       >
         <li className="navBar__navElements__element">SPEAKERS</li>
       </Link>
       <Link
         onClick={linksHandler}
         className="navBar__navElements__element"
-        to="/Earphones"
+        to="/Audio-Store/Earphones"
       >
         <li className="navBar__navElements__element">EARPHONES</li>
       </Link>

@@ -9,17 +9,17 @@ function ProductCollection(props) {
 
   const speakerBtnHandler = () => {
     ctx.closeModalCart()
-    navigate("/Speakers")
+    navigate("/Audio-Store/Speakers")
   }
 
   const headphonesBtnHandler = () => {
     ctx.closeModalCart()
-    navigate("/Headphones")
+    navigate("/Audio-Store/Headphones")
   }
 
   const earphonesBtnHandler = () => {
     ctx.closeModalCart()
-    navigate("/Earphones")
+    navigate("/Audio-Store/Earphones")
   }
 
   return (

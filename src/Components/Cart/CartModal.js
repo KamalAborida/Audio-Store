@@ -30,7 +30,7 @@ function CartModal(props) {
   };
 
   const checkoutHandler = () => {
-    navigate("payment");
+    navigate("/Audio-Store/payment");
   };
 
   useEffect(() => {
