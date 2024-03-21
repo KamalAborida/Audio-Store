@@ -18,7 +18,7 @@ function SuccessModal(props) {
   const goHomeHandler = () => {
     dispatch(paymentActions.resetAll());
     setViewLess(false)
-    navigate("/");
+    navigate("/Audio-Store");
     dispatch(cartActions.removeAll());
   };
 

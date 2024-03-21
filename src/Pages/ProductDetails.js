@@ -57,7 +57,7 @@ function ProductDetails() {
   }, [data, dispatch, img]);
 
   const goBackHandler = () => {
-    navigate("/");
+    navigate("/Audio-Store");
   };
 
   const buyHandler = () => {

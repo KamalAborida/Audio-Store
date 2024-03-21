@@ -18,7 +18,7 @@ function NavElements(props) {
     <ul className="navBar__navElements">
       <Link
         onClick={linksHandler}
-        to="/"
+        to="/Audio-Store"
         className="navBar__navElements__element"
       >
         <li className="navBar__navElements__element">HOME</li>

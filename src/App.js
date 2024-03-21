@@ -15,6 +15,7 @@ function App() {
       children: [
         {
           index: true,
+          path: "/Audio-Store",
           element: <HomePage />,
           loader: loader,
         },

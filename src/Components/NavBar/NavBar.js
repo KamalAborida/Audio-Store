@@ -11,7 +11,7 @@ function NavBar(props) {
   const ctx = useContext(ModalContext);
 
   const homeBtnHandler = () => {
-    navigate("/");
+    navigate("/Audio-Store");
   };
 
   const cartBtnHandler = () => {
